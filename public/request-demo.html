@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Demo</title>
+  <link rel="icon" type="image/png" href="2.png" sizes="32x32">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+            calibri: ['Calibri', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N89XZGM4');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 10px;
+      }
+
+      .header-nav-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .header-right-group {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-100">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N89XZGM4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-80 backdrop-blur-md py-4 shadow-sm">
+    <div class="container mx-auto flex items-center justify-between px-4 md:px-6">
+      <!-- "स्वशासन" logo as an image link -->
+      <a href="https://svashasan.com" class="flex-shrink-0">
+        <img src="2.png" alt="Svashasan Logo" class="h-10 w-auto object-contain">
+      </a>
+      <nav class="hidden md:flex flex-grow justify-center">
+        <ul class="flex space-x-6 text-gray-600 font-medium">
+          <li><a href="index.html#about" class="hover:text-gray-900 hover:font-bold transition-all duration-200">About
+              Us</a></li>
+          <li><a href="index.html#features"
+              class="hover:text-gray-900 hover:font-bold transition-all duration-200">Features</a></li>
+          <li><a href="index.html#contact"
+              class="hover:text-gray-900 hover:font-bold transition-all duration-200">Contact</a></li>
+          <li><a href="https://svashasan.com/blog"
+              class="hover:text-gray-900 hover:font-bold transition-all duration-200">Blog</a></li>
+          <li><a href="https://svashasan.com/survey"
+              class="hover:text-gray-900 hover:font-bold transition-all duration-200">Survey</a></li>
+          <li><a href="https://svashasan.com/developer-platform"
+              class="hover:text-gray-900 hover:font-bold transition-all duration-200">API</a></li>
+          <li><a href="https://svashasan.com/model-performance"
+              class="hover:text-gray-900 hover:font-bold transition-all duration-200">Models</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center space-x-4 header-right-group ml-auto">
+        <a href="onboarding.html"
+          class="text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+          </svg>
+        </a>
+        <button id="menu-button" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute top-full left-0 right-0 bg-white bg-opacity-95 backdrop-blur-md shadow-md py-4">
+      <ul class="flex flex-col items-center space-y-4 text-gray-800 font-medium">
+        <li><a href="index.html#about" class="hover:text-gray-900 hover:font-bold transition-all duration-200">About
+            Us</a></li>
+        <li><a href="index.html#features"
+            class="hover:text-gray-900 hover:font-bold transition-all duration-200">Features</a></li>
+        <li><a href="index.html#contact"
+            class="hover:text-gray-900 hover:font-bold transition-all duration-200">Contact</a></li>
+        <li><a href="https://svashasan.com/blog"
+            class="hover:text-gray-900 hover:font-bold transition-all duration-200">Blog</a></li>
+        <li><a href="https://svashasan.com/survey"
+            class="hover:text-gray-900 hover:font-bold transition-all duration-200">Survey</a></li>
+        <li><a href="https://svashasan.com/developer-platform"
+            class="hover:text-gray-900 hover:font-bold transition-all duration-200">API</a></li>
+        <li><a href="https://svashasan.com/model-performance"
+            class="hover:text-gray-900 hover:font-bold transition-all duration-200">Models</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="py-20 mt-16 px-4 md:px-6">
+    <div class="container mx-auto max-w-2xl bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-4xl font-bold text-gray-800 text-center mb-8">Request a Demo</h2>
+      <p class="text-lg text-gray-700 text-center mb-6">
+        Fill out the form below and our team will get in touch to schedule a personalized demo of Svashasan OS.
+      </p>
+      <form id="demo-form" method="POST" class="space-y-6">
+        <div>
+          <label for="name" class="block text-lg font-medium text-gray-700 mb-1">Your Name</label>
+          <input type="text" id="name" name="name" required
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-md"
+            placeholder="John Doe">
+        </div>
+        <div>
+          <label for="email" class="block text-lg font-medium text-gray-700 mb-1">Work Email</label>
+          <input type="email" id="email" name="email" required
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-md"
+            placeholder="you@company.com">
+        </div>
+        <div>
+          <label for="company" class="block text-lg font-medium text-gray-700 mb-1">Company Name</label>
+          <input type="text" id="company" name="company"
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-md"
+            placeholder="Acme Corp">
+        </div>
+        <div>
+          <label for="message" class="block text-lg font-medium text-gray-700 mb-1">Message</label>
+          <textarea id="message" name="message" rows="4"
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-md"
+            placeholder="Tell us about your needs..."></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit"
+            class="inline-flex justify-center py-3 px-10 border border-transparent shadow-sm text-lg font-bold rounded-xl text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-gray-900 py-6 text-center border-t border-gray-300">
+    <div class="container mx-auto px-4 md:px-6">
+      <p>2026 &copy; Svashasan Labs</p>
+      <p class="mt-2 text-sm space-x-2">
+        <a href="https://svashasan.com/privacy-policy" class="hover:underline">Privacy Policy</a>
+        <span>|</span>
+        <a href="https://svashasan.com/terms-of-use." class="hover:underline">Terms & Conditions</a>
+        <span>|</span>
+        <a href="https://svashasan.com/cookie-policy" class="hover:underline">Cookie Policy</a>
+        <span>|</span>
+        <a href="https://svashasan.com/careers" class="hover:underline">Careers</a>
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex justify-center items-center space-x-6 mt-4">
+        <a href="https://www.linkedin.com/company/svashasan/" class="text-gray-400 transition-colors p-2 rounded-full"
+          title="LinkedIn">
+          <img src="linkedin.svg" alt="LinkedIn" class="w-6 h-6">
+        </a>
+        <a href="https://x.com/Svashasann" class="text-gray-400 transition-colors p-2 rounded-full" title="X (Twitter)">
+          <img src="twitter.svg" alt="Twitter" class="w-6 h-6">
+        </a>
+        <a href="https://www.youtube.com/@SvashasanLabs" class="text-gray-400 transition-colors p-2 rounded-full"
+          title="YouTube">
+          <img src="youtube.svg" alt="YouTube" class="w-6 h-6">
+        </a>
+        <a href="https://github.com/Svashasan" class="text-gray-400 transition-colors p-2 rounded-full" title="GitHub">
+          <img src="github.svg" alt="GitHub" class="w-6 h-6">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    });
+  </script>
+
+  <!--Convex leadsubmission code backend database-->
+  <script>
+    const form = document.querySelector('#demo-form');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = form.querySelector('[name="name"]').value;
+      const email = form.querySelector('[name="email"]').value;
+      const company = form.querySelector('[name="company"]').value;
+      const message = form.querySelector('[name="message"]').value;
+
+      try {
+        const res = await fetch("/api/submit-demo", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            company,
+            message
+          })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) throw new Error(data.error);
+
+        alert("✅ Request submitted successfully!");
+        form.reset();
+
+      } catch (err) {
+        alert("❌ Submission failed: " + err.message);
+      }
+    });
+  </script>
+
+</body>
+
+</html>
