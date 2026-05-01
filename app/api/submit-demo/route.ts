@@ -6,7 +6,9 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     try {
-        await convex.mutation("leads:createLead", {
+        import { api } from "../../../convex/_generated/api";
+
+        await convex.mutation(api.leads.createLead, {
             name: body.name,
             email: body.email,
             company: body.company,
